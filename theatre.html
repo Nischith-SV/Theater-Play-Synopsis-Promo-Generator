@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theater Play Generator</title>
+  <!-- Use Google Font Lora for a more elegant look -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='theatre.css') }}">
+</head>
+<body >
+  
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img src="{{ url_for('static', filename='PULSE_LOGO.png') }}" alt="PULSE Logo" class="logo">
+      <img src="{{ url_for('static', filename='NIE_University.png') }}" alt="NIE University Logo" class="logo">
+      <img src="{{ url_for('static', filename='IVIS_logo.png') }}" alt="IVIS Logo" class="logo">
+    </div>
+
+    <!-- Header -->
+    <h1>Theater Play Synopsis & Promo Generator</h1>
+
+    <!-- Form Section -->
+    <form id="playForm">
+      <label for="playTheme">Play Theme:</label>
+      <input type="text" id="playTheme" name="playTheme" placeholder="Enter a theme (e.g., love, betrayal)" required>
+
+      <label for="playSetting">Setting:</label>
+      <input type="text" id="playSetting" name="playSetting" placeholder="Enter a setting (e.g., 19th-century Paris)" required>
+
+      <label for="playCharacters">Main Characters:</label>
+      <input type="text" id="playCharacters" name="playCharacters" placeholder="Enter main characters (e.g., Alice, Bob)" required>
+
+      <button type="submit">Generate</button>
+    </form>
+
+    <!-- Output Section -->
+    <div id="output">
+      <h2><u>Generated Content</u></h2>
+      <h3>Synopsis</h3>
+      <div id="synopsis"></div><br>
+      <h3>Promo</h3>
+      <div id="promo"></div>
+
+      <!-- Download Buttons -->
+      <br><center>
+      <button id="downloadSynopsisBtn" style="display: none;">Download Synopsis</button>
+      <button id="downloadPromoBtn" style="display: none;">Download Promo</button>
+    </center>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='theatre.js') }}"></script>
+</body>
+</html>
